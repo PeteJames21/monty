@@ -26,7 +26,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
-
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
@@ -42,6 +41,7 @@ int main(int argc, char **argv)
 		else
 		{
 			arg = strtok(NULL, " \n");
+			/* Handle comments of the type `opcode#comment` */
 			remove_comment(opcode);
 			errcode = exec(opcode, arg, line_no, &main_stack);
 			/* Stop the execution if an error is encountered */
