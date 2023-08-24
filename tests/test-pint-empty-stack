@@ -1,0 +1,2 @@
+# pint should fail because the stack is empty
+pint

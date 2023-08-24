@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
@@ -54,6 +54,7 @@ void (*get_op_func(char *opcode)) (stack_t **stack, unsigned int line_number)
 
 	instruction_t instructions[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
