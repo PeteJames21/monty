@@ -130,3 +130,44 @@ void rotl(stack_t **stack, unsigned int line_number)
 			break;
 	}
 }
+
+/**
+ * rotr - rotate the stack to the bottom
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ * Description - The last element of the stack becomes the top element
+ * of the stack
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	int n_bottom;
+	stack_t *node;
+
+	(void)line_number;
+	node = *stack;
+	if (node == NULL)
+		return;
+	/* Move to the bottom and get the last elment */
+	while (node)
+	{
+		if (node->next == NULL)
+		{
+			n_bottom = node->n;
+			break;
+		}
+		node = node->next;
+	}
+
+	/* Push n_bottom to the top by swapping successive elements */
+	while (node)
+	{
+		if (node->prev)
+		{
+			node->n = node->prev->n;
+			node->prev->n = n_bottom;
+			node = node->prev;
+		}
+		else
+			break;
+	}
+}
