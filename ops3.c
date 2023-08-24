@@ -75,3 +75,28 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", n);
 }
+
+/**
+ * pstr - print the string starting at the top of the stack
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ * Description - The integer stored in each element of the stack is treated
+ * as the ascii value of the character to be printed. The string stops when
+ * either the stack is over, the value of the element if 0, or the value
+ * is not in the ASCII table. A newline is printed if the stack is empty.
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *h;
+	(void)line_number;
+
+	h = *stack;
+	while (h)
+	{
+		if (h->n <= 0 || h->n > 127)
+			break;
+		printf("%c", h->n);
+		h = h->next;
+	}
+	printf("\n");
+}
