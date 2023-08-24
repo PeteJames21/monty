@@ -48,6 +48,7 @@ void swap(stack_t **stack, unsigned int line_number);
 
 /* ops2.h */
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 /* stack.c */
 void free_stack(stack_t *top);

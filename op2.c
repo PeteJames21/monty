@@ -32,3 +32,14 @@ void add(stack_t **stack, unsigned int line_number)
 	top->next->n = sum;
 	pop(stack, line_number);
 }
+
+/**
+ * nop - do nothing
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
