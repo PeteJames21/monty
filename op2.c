@@ -62,7 +62,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	len = stack_len(*stack);
 	if (len < 2)
 	{
-		err_msg = "L%d: can't add, stack too short\n";
+		err_msg = "L%d: can't sub, stack too short\n";
 		fprintf(stderr, err_msg, line_number);
 		errno = EXIT_FAILURE;
 		return;
