@@ -46,12 +46,15 @@ void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, int n);
 void swap(stack_t **stack, unsigned int line_number);
 
-/* ops2.h */
+/* ops2.c */
 void add(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+
+/* ops3.c */
+void _mod(stack_t **stack, unsigned int line_number);
 
 /* stack.c */
 void free_stack(stack_t *top);
