@@ -100,3 +100,33 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 	printf("\n");
 }
+
+/**
+ * rotl - rotate the stack to the top
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ * Description - The top element of the stack becomes the last one, and
+ * the second top element of the stack becomes the first one. The function
+ * never fails.
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	int n_top;
+	stack_t *node;
+
+	(void)line_number;
+	node = *stack;
+	if (node != NULL)
+		n_top = node->n;
+	while (node)
+	{
+		if (node->next)
+		{
+			node->n = node->next->n;
+			node->next->n = n_top;
+			node = node->next;
+		}
+		else
+			break;
+	}
+}
