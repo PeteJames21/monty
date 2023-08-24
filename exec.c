@@ -19,6 +19,13 @@ int exec(char *opcode, char *arg, unsigned int line_no, stack_t **stack)
 	int arg_int;
 	void (*op_func)(stack_t **stack, unsigned int line_no);
 
+	if (stack == NULL)  /* Can't be NULL but can be a pointer to NULL */
+	{
+		fprintf(stderr, "Error: invalid pointer to stack (NULL)\n");
+		errno = EXIT_FAILURE;
+		return (EXIT_FAILURE);
+	}
+
 	op_func = get_op_func(opcode);
 	errno = 0;
 	if (strcmp(opcode, "push") == 0)

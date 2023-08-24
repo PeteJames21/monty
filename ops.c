@@ -13,13 +13,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	stack_t *h;
 	(void)line_number;
 
-	if (stack == NULL)
-	{
-		fprintf(stderr, "Error: invalid pointer to stack\n");
-		errno = EXIT_FAILURE;
-		return;
-	}
-
 	h = *stack;
 	while (h)
 	{
@@ -37,12 +30,6 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL)
-	{
-		fprintf(stderr, "Error: invalid pointer to stack\n");
-		errno = EXIT_FAILURE;
-		return;
-	}
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
@@ -64,12 +51,6 @@ void pop(stack_t **stack, unsigned int line_number)
 	char *err_msg;
 	stack_t *top = *stack;
 
-	if (stack == NULL)
-	{
-		fprintf(stderr, "Error: invalid pointer to stack\n");
-		errno = EXIT_FAILURE;
-		return;
-	}
 	if (*stack == NULL)
 	{
 		err_msg = "L%d: can't pop an empty stack\n";
@@ -93,13 +74,6 @@ void pop(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, int n)
 {
 	stack_t *new;
-
-	if (stack == NULL)
-	{
-		fprintf(stderr, "Error: invalid pointer to stack\n");
-		errno = EXIT_FAILURE;
-		return;
-	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
