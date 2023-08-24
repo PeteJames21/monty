@@ -42,13 +42,13 @@ int main(int argc, char **argv)
 		else
 		{
 			arg = strtok(NULL, " \n");
+			remove_comment(opcode);
 			errcode = exec(opcode, arg, line_no, &main_stack);
 			/* Stop the execution if an error is encountered */
 			if (errcode != EXIT_SUCCESS)
 				break;
 		}
 	}
-
 	free(line);
 	free_stack(main_stack);
 	fclose(fp);

@@ -24,3 +24,23 @@ int is_int(char *s)
 
 	return (1);
 }
+
+/**
+ * remove_comment - remove a comment from a string
+ * @s: pointer to string to be processed
+ * Description - comments are removed by replacing the first occurence of
+ * `#` with a null byte. The string is modified in place.
+ */
+void remove_comment(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] == '#')
+		{
+			s[i] = '\0';
+			break;
+		}
+	}
+}

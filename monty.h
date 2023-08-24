@@ -62,5 +62,6 @@ size_t stack_len(stack_t *stack);
 
 /* utils.c */
 int is_int(char *s);
+void remove_comment(char *s);
 
 #endif
