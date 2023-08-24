@@ -58,6 +58,7 @@ void _mod(stack_t **stack, unsigned int line_number);
 
 /* stack.c */
 void free_stack(stack_t *top);
+void pchar(stack_t **stack, unsigned int line_number);
 size_t stack_len(stack_t *stack);
 
 /* utils.c */
