@@ -53,6 +53,39 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
+ * pop - remove the top element of the stack
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ * Description - if the stack if empty, an error message is printed an errno
+ * is set to EXIT_FAILURE
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	char *err_msg;
+	stack_t *top = *stack;
+
+	if (stack == NULL)
+	{
+		fprintf(stderr, "Error: invalid pointer to stack\n");
+		errno = EXIT_FAILURE;
+		return;
+	}
+	if (*stack == NULL)
+	{
+		err_msg = "L%d: can't pop an empty stack\n";
+		fprintf(stderr, err_msg, line_number);
+		errno = EXIT_FAILURE;
+		return;
+	}
+
+	if (top->next != NULL)
+		top->next->prev = NULL;
+
+	*stack = top->next;
+	free(top);
+}
+
+/**
  * push - push an int onto the stack
  * @stack: a double pointer to the top of the stack
  * @n: integer to be pushed
