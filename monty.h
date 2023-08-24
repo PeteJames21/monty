@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stddef.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -42,9 +44,11 @@ void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, int n);
+void swap(stack_t **stack, unsigned int line_number);
 
 /* stack.c */
 void free_stack(stack_t *top);
+size_t stack_len(stack_t *stack);
 
 /* utils.c */
 int is_int(char *s);

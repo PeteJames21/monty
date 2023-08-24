@@ -56,7 +56,7 @@ void pint(stack_t **stack, unsigned int line_number)
  * pop - remove the top element of the stack
  * @stack: a double pointer to the top of the stack
  * @line_number: line number in which the opcode is found
- * Description - if the stack if empty, an error message is printed an errno
+ * Description - if the stack if empty, an error message is printed and errno
  * is set to EXIT_FAILURE
  */
 void pop(stack_t **stack, unsigned int line_number)
@@ -119,4 +119,33 @@ void push(stack_t **stack, int n)
 	}
 
 	*stack = new;
+}
+
+/**
+ * swap - swao the top two elements of the stack
+ * @stack: a double pointer to the top of the stack
+ * @line_number: line number in which the opcode is found
+ * Description - if the stack has < 2 elements, an error message
+ * is printed and errno is set to EXIT_FAILURE
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	char *err_msg;
+	size_t len;
+	int tmp;
+	stack_t *top;
+
+	len = stack_len(*stack);
+	if (len < 2)
+	{
+		err_msg = "L%d: can't swap, stack too short\n";
+		fprintf(stderr, err_msg, line_number);
+		errno = EXIT_FAILURE;
+		return;
+	}
+
+	top = *stack;
+	tmp = top->n;
+	top->n = top->next->n;
+	top->next->n = tmp;
 }
