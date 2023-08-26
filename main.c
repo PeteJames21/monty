@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	ssize_t len = 0;
 	char *opcode, *arg, *line = NULL;
 	unsigned int line_no = 0;
-	int errcode;
+	int errcode = 0;
 	stack_t *main_stack = NULL;
 
 	if (argc != 2)
