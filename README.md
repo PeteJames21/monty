@@ -18,18 +18,18 @@ pall
 
 ## Allowed opcodes
 The following are valid Monty opcodes:
-- push: pushes an element to the stack
-- pall: prints all the values on the stack, starting from the top of the stack
-- pint: prints the value at the top of the stack, followed by a new line
-- pop: removes the top element of the stack
-- swap: swaps the top two elements of the stack
-- add: adds the top two elements of the stack
-- nop: doesn’t do anything
-- sub: subtracts the top element of the stack from the second top element of the stack
-- div: divides the second top element of the stack by the top element of the stack
-- mul: multiplies the second top element of the stack with the top element of the stack
-- mod: computes the remainder of the division of the second top element of the stack by the top element of the stack
-- pchar: prints the char at the top of the stack, followed by a new line. An error message is printed if the value is not in the ASCII table or if the stack if empty
+- `push`: pushes an element to the stack
+- `pall`: prints all the values on the stack, starting from the top of the stack
+- `pint`: prints the value at the top of the stack, followed by a new line
+- `pop`: removes the top element of the stack
+- `swap`: swaps the top two elements of the stack
+- `add`: adds the top two elements of the stack
+- `nop`: doesn’t do anything
+- `sub`: subtracts the top element of the stack from the second top element of the stack
+- `div`: divides the second top element of the stack by the top element of the stack
+- `mul`: multiplies the second top element of the stack with the top element of the stack
+- `mod`: computes the remainder of the division of the second top element of the stack by the top element of the stack
+- `pchar`: prints the char at the top of the stack, followed by a new line. An error message is printed if the value is not in the ASCII table or if the stack if empty
 - pstr: prints the string starting at the top of the stack, followed by a new line. The integer stored in each element of the stack is treated as the ascii value of the character to be printed. The string stops when the stack is over, the value of the element is 0, or the value of the element is not in the ASCII table. A newline is printed if the stack is empty
 - rotl: rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
 - rotr: rotates the stack to the bottom. The last element of the stack becomes the top element of the stack
@@ -38,10 +38,12 @@ The following are valid Monty opcodes:
 
 ## Usage
 Monty is designed to work on GNU/Linux platforms.
-1. First compile the program by using the compilation script:
+1. First compile the program using the compilation script:
 `./compile`
-2. Execute a Monty bytecode file (`.m`):
-`./monty file-with-monty-bytecode.m`
+2. Execute a Monty bytecode file:
+```
+./monty file-with-monty-bytecode.m
+```
 
 ## Errors
 The monty program runs the bytecodes line by line and stops if it encounters an error. The program fails and prints an error message if:
