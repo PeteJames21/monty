@@ -34,7 +34,7 @@ The following are valid Monty opcodes:
 - `rotl`: rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
 - `rotr`: rotates the stack to the bottom. The last element of the stack becomes the top element of the stack
 
-**NOTE**: For binary opcodes with a return value, e.g. `add` and `sub`, the result is stored in the second top element of the stack, and the top element is removed. The stack will therefore be one element shorter after the opcode is executed and result will be at the top of the stack.
+**NOTE**: For binary opcodes with a return value, e.g. `add` and `sub`, the result is stored in the second top element of the stack, and the top element is removed. The stack will therefore be one element shorter after the opcode is executed and the result will be at the top of the stack.
 
 ## Usage
 Monty is designed to work on GNU/Linux platforms.
