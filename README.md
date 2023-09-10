@@ -30,9 +30,9 @@ The following are valid Monty opcodes:
 - `mul`: multiplies the second top element of the stack with the top element of the stack
 - `mod`: computes the remainder of the division of the second top element of the stack by the top element of the stack
 - `pchar`: prints the char at the top of the stack, followed by a new line. An error message is printed if the value is not in the ASCII table or if the stack if empty
-- pstr: prints the string starting at the top of the stack, followed by a new line. The integer stored in each element of the stack is treated as the ascii value of the character to be printed. The string stops when the stack is over, the value of the element is 0, or the value of the element is not in the ASCII table. A newline is printed if the stack is empty
-- rotl: rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
-- rotr: rotates the stack to the bottom. The last element of the stack becomes the top element of the stack
+- `pstr`: prints the string starting at the top of the stack, followed by a new line. The integer stored in each element of the stack is treated as the ascii value of the character to be printed. The string stops when the stack is over, the value of the element is 0, or the value of the element is not in the ASCII table. A newline is printed if the stack is empty
+- `rotl`: rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
+- `rotr`: rotates the stack to the bottom. The last element of the stack becomes the top element of the stack
 
 **NOTE**: For binary opcodes with a return value, e.g. `add` and `sub`, the result is stored in the second top element of the stack, and the top element is removed. The stack will therefore be one element shorter after the opcode is executed and result will be at the top of the stack.
 
